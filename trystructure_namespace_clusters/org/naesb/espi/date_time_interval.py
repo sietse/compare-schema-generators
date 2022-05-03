@@ -1,0 +1,32 @@
+from dataclasses import dataclass, field
+from typing import Optional
+from trystructure_namespace_clusters.org.naesb.espi.object_mod import Object
+
+__NAMESPACE__ = "http://naesb.org/espi"
+
+
+@dataclass
+class DateTimeInterval(Object):
+    """Interval of date and time.
+
+    End is not included because it can be derived from the start and the
+    duration.
+
+    :ivar duration: [correction] Duration of the interval, in seconds.
+    :ivar start: [correction] Date and time that this interval started.
+    """
+    class Meta:
+        namespace = "http://naesb.org/espi"
+
+    duration: Optional[int] = field(
+        default=None,
+        metadata={
+            "type": "Element",
+        }
+    )
+    start: Optional[int] = field(
+        default=None,
+        metadata={
+            "type": "Element",
+        }
+    )

@@ -1,0 +1,17 @@
+from dataclasses import dataclass, field
+
+__NAMESPACE__ = "http://docs.oasis-open.org/ns/emix/2011/06/power"
+
+
+@dataclass
+class Mrid:
+    class Meta:
+        name = "mrid"
+        namespace = "http://docs.oasis-open.org/ns/emix/2011/06/power"
+
+    value: str = field(
+        default="",
+        metadata={
+            "required": True,
+        }
+    )
